@@ -20,4 +20,4 @@ go build main.go
 rm -f main.zip
 
 # Crear un archivo .zip con el ejecutable compilado
-zip -r main.zip main
+zip -r main.zip . -i main
