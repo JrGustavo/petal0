@@ -18,5 +18,5 @@ go build main.go
 
 
 # Agregar el archivo ejecutable compilado al archivo zip
-zip -r main
+zip -r main.zip main
 
