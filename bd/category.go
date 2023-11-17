@@ -6,7 +6,7 @@ import (
 	"github.com/JrGustavo/petal0/models"
 )
 
-func InserCategory(c models.Category) (int64, error) {
+func InsertCategory(c models.Category) (int64, error) {
 	fmt.Println("Comienza registro de InsertCategory")
 
 	err := DbConnect()
