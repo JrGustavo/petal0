@@ -4,7 +4,7 @@
 git add .
 
 # Hacer un commit con el mensaje "update backend"
-git commit -m "update backend"
+git commit -m "Update Part#2"
 
 # Enviar los cambios al repositorio remoto
 git push
@@ -16,5 +16,11 @@ export GOARCH=amd64
 # Compilar el código
 go build main.go
 
-# Crear un archivo .zip con el ejecutable compilado
-zip -r main.zip .  -i main
+# Verificar que el archivo main existe
+if [ ! -f main ]; then
+  echo "El archivo main no existe."
+  exit 1
+fi
+
+# Agregar el archivo ejecutable compilado al archivo zip
+zip -r main.zip . -i main
