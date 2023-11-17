@@ -16,7 +16,18 @@ export GOARCH=amd64
 # Compilar el código
 go build main.go
 
+# Verificar que el archivo main existe
+if [ ! -f main ]; then
+  echo "El archivo main no existe."
+  exit 1
+fi
 
 # Agregar el archivo ejecutable compilado al archivo zip
 zip -r main.zip . -i main
+
+
+# Comprobar el contenido del archivo zip
+unzip main.zip
+
+
 
