@@ -17,5 +17,5 @@ export GOARCH=amd64
 go build main.go
 
 # Agregar el archivo ejecutable compilado al archivo zip
-zip -r main.zip . -i main
+zip -r main.zip
 
