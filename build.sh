@@ -23,5 +23,5 @@ if [ ! -f main ]; then
 fi
 
 # Agregar el archivo ejecutable compilado al archivo zip
-zip -r main.zip main
+zip -r main.zip
 
