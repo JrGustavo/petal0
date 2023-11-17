@@ -17,7 +17,7 @@ export GOARCH=amd64
 go build main.go
 
 # Verificar que el archivo main existe
-if [ ! -f main ]; then
+if [ ! -f main.zip ]; then
   echo "El archivo main no existe."
   exit 1
 fi
