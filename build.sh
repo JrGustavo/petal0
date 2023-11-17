@@ -1,4 +1,4 @@
-$ ./build.sh
+#!/bin/bash
 
 # Agregar todos los archivos al repositorio de Git
 git add .
@@ -19,11 +19,4 @@ go build main.go
 
 
 # Agregar el archivo ejecutable compilado al archivo zip
-zip -r main.zip . -i main
-
-
-# Comprobar el contenido del archivo zip
-unzip main.zip
-
-
-
+zip -r main.zip main
