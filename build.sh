@@ -25,5 +25,3 @@ fi
 # Agregar el archivo ejecutable compilado al archivo zip
 zip -r main.zip main
 
-# Comprobar el contenido del archivo zip
-unzip main.zip
