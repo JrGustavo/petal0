@@ -14,8 +14,7 @@ export GOOS=linux
 export GOARCH=amd64
 
 # Compilar el código
-go build main.go
+go build -o main
 
-# Agregar el archivo ejecutable compilado al archivo zip
-zip -r main.zip  . -i main
-
+# Crear el archivo zip y agregar el ejecutable compilado
+zip main.zip main
