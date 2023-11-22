@@ -1,9 +1,10 @@
-package petal0
+package main
 
 import (
 	"context"
 	"github.com/JrGustavo/petal0/awsgo"
 	"github.com/JrGustavo/petal0/bd"
+	_ "github.com/JrGustavo/petal0/bd"
 	"github.com/JrGustavo/petal0/handlers"
 	"github.com/aws/aws-lambda-go/events"
 	lambda "github.com/aws/aws-lambda-go/lambda"
@@ -13,14 +14,14 @@ import (
 
 func main() {
 	lambda.Start(EjecutoLambda)
-
 }
 
 func EjecutoLambda(ctx context.Context, request events.APIGatewayV2HTTPRequest) (*events.APIGatewayProxyResponse, error) {
+
 	awsgo.InicializoAWS()
 
 	if !ValidoParametros() {
-		panic("Error en los parametros. debe enviar 'SecretName', 'UrlPrefix'")
+		panic("Error en los parámetros. debe enviar 'SecretName', 'UrlPrefix'")
 	}
 
 	var res *events.APIGatewayProxyResponse
@@ -42,7 +43,9 @@ func EjecutoLambda(ctx context.Context, request events.APIGatewayV2HTTPRequest) 
 		Body:       string(message),
 		Headers:    headersResp,
 	}
+
 	return res, nil
+
 }
 
 func ValidoParametros() bool {
@@ -50,12 +53,10 @@ func ValidoParametros() bool {
 	if !traeParametro {
 		return traeParametro
 	}
-
 	_, traeParametro = os.LookupEnv("UrlPrefix")
 	if !traeParametro {
 		return traeParametro
 	}
 
 	return traeParametro
-
 }
